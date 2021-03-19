@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Apps</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<!-- Copyright (c) 2020-infinity Nitin Seshadri. All rights reserved. !-->
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+}
+/* CSS Flexbox! */
+.homescreen {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+}
+.title, .center {
+  width: 100%;
+}
+.title {
+  font-weight: 200;
+}
+h1.title {
+  font-size: 3em; /* 48px */
+}
+h2.title {
+  font-size: 2em; /* 32px */
+}
+.button {
+  color: #007aff; /* iOS systemBlue */
+  text-decoration: none;
+}
+.error {
+  color: red;
+}
+/* Note for detectives: By default, 1em = 16px. To put it simply, using em units allows for better scaling. */
+.app {
+  margin: 2em;
+  width: 8em; /* 128px */
+  height: 8em; /* 128px */
+  border-radius: 23%; /* from iCloud.com */
+  box-shadow: 0 5px 28px 0 rgba(0,0,0,.1); /* from iCloud.com */
+  cursor: pointer;
+  background-color: rgb(235,235,235); /* Default app BG color */
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: box-shadow 0.5s;
+}
+.app > .app-name {
+  position: relative;
+  top: 8.75em;
+  padding: 0.25em;
+  border-radius: 0.25em;
+  transition: background-color 0.25s, color 0.25s;
+}
+.app:hover {
+  box-shadow: 0 5px 28px 0 rgba(0,0,0,.3);
+}
+.app:hover > .app-name {
+  background-color: #1067de; /* macOS Finder selection color */
+  color: white;
+}
+.app:active {
+  box-shadow: 0 5px 28px 0 rgba(0,0,0,.05);
+}
+.app-badge {
+  position: relative;
+  top: -1.5rem;
+  left: 6.5rem;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: #ff3b30; /* from App Store Connect */
+  color: white;
+  font-size: 1.25rem; /* Use rem ("root em") units because we're changing the font size */
+  text-align: center;
+  line-height: 2rem;
+}
+.app-circle {
+  display: inline-block;
+  margin: 0.125em 0.25em;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+}
+.app-circle.new {
+  background-color: #5ac8fa; /* iOS systemTeal */
+}
+.app-circle.testflight {
+  background-color: #ff9500; /* iOS systemOrange */
+}
+.translucent-overlay {
+  display: none; /* Hidden by default; unhide with CSS or JS */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4em; /* 64px */
+  height: 4em; /* 64px */
+  border-radius: 0.75em;
+  background-color: black;
+  opacity: 0.6;
+}
+.translucent-overlay > .activity-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -1.0625em 0 0 -1.0625em; /* 50% plus 50% of border width */
+}
+.activity-indicator {
+  display: block;
+  width: 2em; /* 32px */
+  height: 2em; /* 32px */
+  border: 0.125em solid black; /* 2px */
+  border-radius: 50%;
+  border-right: 0.125em solid white; /* 2px */
+  animation: small-spin 0.5s linear infinite;
+}
+@media (min-width: 420px) {
+  .homescreen {
+    height: 100vh;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+  .translucent-overlay {
+    background-color: white;
+  }
+  .activity-indicator {
+    border: 0.125em solid white; /* 2px */
+    border-right: 0.125em solid black; /* 2px */
+  }
+}
+@media (prefers-color-scheme: dark) and (min-width: 420px) {
+  body {
+    background-color: #1d1d1d;
+  }
+}
+@keyframes small-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="homescreen">
+  <h1 class="title">Choose an app.</h1>
+  <noscript class="center"><h2 class="title error">Sorry, you need to enable JavaScript to use this page.</h2></noscript>
+  <div class="app" data-ios-app-id="1241696994" data-android-app-id="appinventor.ai_seshadri_nitin.Mathematica" data-website-url="https://projectmathematica.appspot.com/"><span class="app-name">Math++</span></div>
+  <div class="app" data-ios-app-id="1311168490" data-website-url="https://d2nkteam.wixsite.com/restshare"><span class="app-name">RestShare</span></div>
+  <div class="app" data-ios-app-id="1514225088" data-website-url="https://apps.nitinseshadri.com/midiplayer/"><span class="app-name">MIDI Player</span></div> <!-- data-url-scheme="midiplayer://" !-->
+  <!--<div class="app" data-website-url="https://apps.nitinseshadri.com/midimodule/"><span class="app-name">MIDI Module</span></div>!-->
+</div>
+
+<div class="translucent-overlay" id="activityIndicatorOverlay"><div class="activity-indicator"></div></div>
+
+<script type="text/javascript">
+// Pull app icons directly from the App Store, no image hosting needed.
+document.querySelectorAll(".app").forEach((element) => {
+  if (element.dataset.iosAppId) {
+    // The iTunes Search API doesn't support cross-origin requests. Using JSONP instead.
+    var s = document.createElement("script");
+    s.setAttribute("src", "https://itunes.apple.com/lookup?callback=iTunesDataReceiver&id=" + element.dataset.iosAppId);
+    document.head.appendChild(s);
+  }
+});
+function iTunesDataReceiver(response) { // JSONP callback for iTunes Search API
+  data = response["results"][0];
+  document.querySelector(".app[data-ios-app-id='" + data.trackId + "']").style.backgroundImage = "url(" + data.artworkUrl512 + ")";
+}
+// Smartly redirect the user to the appropriate page based on their platform.
+document.body.addEventListener("click", function (event) {
+  if (event.target.classList.contains("app")) {
+    if ((/iP(hone|od|ad)/i.test(navigator.platform)) && event.target.dataset.iosAppId && !event.target.dataset.websiteUrl) {
+      if (event.target.dataset.urlScheme) {
+        window.location.assign(event.target.dataset.urlScheme);
+        document.getElementById("activityIndicatorOverlay").style.display = "block";
+        setTimeout(function(){
+          document.getElementById("activityIndicatorOverlay").style.display = "none";
+          window.location.assign('https://apps.apple.com/us/app/id' + event.target.dataset.iosAppId);
+        }, 2000);
+      } else {
+        window.location.assign('https://apps.apple.com/us/app/id' + event.target.dataset.iosAppId);
+      }
+    } else if ((/Android/i.test(navigator.userAgent)) && event.target.dataset.androidAppId) {
+      window.location.assign('https://play.google.com/store/apps/details?id=' + event.target.dataset.androidAppId);
+    } else if (event.target.dataset.websiteUrl) {
+      window.location.assign(event.target.dataset.websiteUrl);
+    } else {
+      console.log("No metadata found for current platform")
+    }
+  }
+});
+</script>
+
+</body>
+</html>
