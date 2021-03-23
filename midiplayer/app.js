@@ -57,7 +57,7 @@ const PrivacyComponent = {
     return tmpl(`
       <h1>Privacy Policy</h1>
       <p>This app does not collect or store any user data or analytics, period.</p>
-      <link href="./privacy.css" rel="stylesheet">
+      <link href="./privacylabels.css" rel="stylesheet">
       <div class="app-privacy__cards">
         <div class="app-privacy__card">
           <div class="privacy-type__icon">
