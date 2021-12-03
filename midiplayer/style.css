@@ -31,9 +31,12 @@ a.border-button {
   border: 1px solid;
   border-radius: 8px;
   text-decoration: none;
+  transition: 0.2s;
 }
 a.border-button:hover {
-  text-decoration: underline;
+  background-color: black;
+  color: #eeeeee;
+  border: 1px solid black;
 }
 .small-text {
   font-size: 0.8em;
@@ -57,5 +60,10 @@ a.border-button:hover {
   }
   a {
     color: #fefefe;
+  }
+  a.border-button:hover {
+    background-color: #eeeeee;
+    color: #1d1d1d;
+    border: 1px solid #eeeeee;
   }
 }
