@@ -1,42 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>NS MIDI Player</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Simple MIDI player for iOS and macOS">
-    <meta name="apple-itunes-app" content="app-id=1514225088, app-clip-bundle-id=com.nitinseshadri.midiplayer.Clip">
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <!-- Custom styles for this template -->
-    <link href="./app.css" rel="stylesheet">
-    <!-- Scripts !-->
-    <script src="./app.js"></script>
-  </head>
-  <body class="text-center">
-  
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="masthead mb-auto">
-    <div class="inner">
-      <h3 class="masthead-brand">NS MIDI Player</h3>
-      <nav class="nav nav-masthead justify-content-center">
-        <a class="nav-link" data-ui-href="/home" href="#/home">Home</a>
-        <a class="nav-link" data-ui-href="/privacy" href="#/privacy">Privacy</a>
-        <a class="nav-link" data-ui-href="/contact" href="#/contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>NS MIDI Player</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-itunes-app" content="app-id=1514225088, app-clip-bundle-id=com.nitinseshadri.midiplayer.Clip">
+<link rel="stylesheet" href="style.css">
+<style>
+#hero-screenshot {
+  width: 100%;
+  max-width: 640px;
+  max-height: 60vh;
+  aspect-ratio: 16 / 10;
+  background-image: url("img/01 Light Vibrant Monterey.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 0.5px solid lightgray;
+  border-radius: 4px;
+}
+@media screen and (prefers-color-scheme: dark) {
+  #hero-screenshot {
+    background-image: url("img/02 Dark Vibrant Monterey.png");
+    border-color: #333333;
+  }
+}
+</style>
+</head>
+<body>
+<iframe class="navbar" src="navbar.html"></iframe>
+<h1>NS MIDI Player</h1>
 
-  <main role="main" id="app" class="inner cover">
-    <noscript><h1>Please enable JavaScript to view this page.</h1></noscript>
-  </main>
-  
-  <footer class="mastfoot mt-auto">
-    <div class="inner">
-      <p>Copyright &copy; 2020-&infin; Nitin Seshadri. All rights reserved.</p>
-    </div>
-  </footer>
-</div>
+<p>NS MIDI Player is a simple MIDI player for iOS and macOS.</p>
 
-  </body>
+<p><div id="hero-screenshot"></div></p>
+
+<p><a href="https://apps.apple.com/us/app/id1514225088" class="border-button">Get the app</a></p>
+
+<h2>Features</h2>
+<p>
+- Free!<br>
+- No ads, in-app purchases, or data collection<br>
+<br>
+- Play standard MIDI files (SMF) with file extension .mid<br>
+- GM and GS standards supported with the default SoundFont<br>
+- Load custom SoundFonts with file extension .sf2 or .dls<br>
+<br>
+- "Open with" from other apps, such as Safari<br>
+- Integrated with the Files app (iOS)<br>
+- Supports drag-and-drop<br>
+- Supports Quick Look previews (macOS)<br>
+<br>
+- Supports background audio and AirPlay<br>
+- Lock screen and Notification Center controls with scrubbing<br>
+- Gapless repeat mode<br>
+- Playback speed control<br>
+- Configurable reverb
+</p>
+
+<p class="footer"><i>Copyright © 2020-∞ Nitin Seshadri. All rights reserved.</i></p>
+</body>
 </html>
