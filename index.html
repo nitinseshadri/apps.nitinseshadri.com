@@ -101,7 +101,7 @@ h2.title {
   background-color: #5ac8fa; /* iOS systemTeal */
 }
 .app-circle.testflight {
-  background-color: #ff9500; /* iOS systemOrange */
+  background-color: #ffcc00; /* iOS systemYellow */
 }
 .translucent-overlay {
   display: none; /* Hidden by default; unhide with CSS or JS */
@@ -170,7 +170,8 @@ h2.title {
   <noscript class="center"><h2 class="title error">Sorry, you need to enable JavaScript to use this page.</h2></noscript>
   <div class="app" data-ios-app-id="1241696994" data-android-app-id="appinventor.ai_seshadri_nitin.Mathematica" data-website-url="https://projectmathematica.appspot.com/"><span class="app-name">Math++</span></div>
   <div class="app" data-ios-app-id="1311168490" data-website-url="https://d2nkteam.wixsite.com/restshare"><span class="app-name">RestShare</span></div>
-  <div class="app" data-ios-app-id="1514225088" data-website-url="https://apps.nitinseshadri.com/midiplayer/"><span class="app-name">MIDI Player</span></div> <!-- data-url-scheme="midiplayer://" !-->
+  <div class="app" data-ios-app-id="1514225088" data-ios-testflight-url="https://testflight.apple.com/join/zqAHFnuF" data-website-url="./midiplayer/"><span class="app-name">MIDI Player</span></div> <!-- data-url-scheme="midiplayer://" !-->
+  <div class="app" data-ios-app-id="1526170892" data-ios-testflight-url="https://testflight.apple.com/join/nIBgbI2F" data-website-url="./midimodule/" data-app-is-beta="true"><span class="app-name"><div class="app-circle testflight"></div>MIDI Module</span></div> 
 </div>
 
 <div class="translucent-overlay" id="activityIndicatorOverlay"><div class="activity-indicator"></div></div>
@@ -192,7 +193,7 @@ function iTunesDataReceiver(response) { // JSONP callback for iTunes Search API
 // Smartly redirect the user to the appropriate page based on their platform.
 document.body.addEventListener("click", function (event) {
   if (event.target.classList.contains("app")) {
-    if ((/iP(hone|od|ad)/i.test(navigator.platform)) && event.target.dataset.iosAppId && !event.target.dataset.websiteUrl) {
+    if ((/iP(hone|od|ad)/i.test(navigator.platform)) && event.target.dataset.iosAppId /*&& !event.target.dataset.websiteUrl*/) {
       if (event.target.dataset.urlScheme) {
         window.location.assign(event.target.dataset.urlScheme);
         document.getElementById("activityIndicatorOverlay").style.display = "block";
@@ -201,7 +202,11 @@ document.body.addEventListener("click", function (event) {
           window.location.assign('https://apps.apple.com/us/app/id' + event.target.dataset.iosAppId);
         }, 2000);
       } else {
-        window.location.assign('https://apps.apple.com/us/app/id' + event.target.dataset.iosAppId);
+        if (event.target.dataset.appIsBeta == "true" && event.target.dataset.iosTestflightUrl) {
+          window.location.assign(event.target.dataset.iosTestflightUrl);
+        } else {
+          window.location.assign('https://apps.apple.com/us/app/id' + event.target.dataset.iosAppId);
+        }
       }
     } else if ((/Android/i.test(navigator.userAgent)) && event.target.dataset.androidAppId) {
       window.location.assign('https://play.google.com/store/apps/details?id=' + event.target.dataset.androidAppId);
