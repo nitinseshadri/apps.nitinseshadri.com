@@ -171,7 +171,7 @@ h2.title {
   <div class="app" data-ios-app-id="1241696994" data-android-app-id="appinventor.ai_seshadri_nitin.Mathematica" data-website-url="https://projectmathematica.appspot.com/"><span class="app-name">Math++</span></div>
   <div class="app" data-ios-app-id="1311168490" data-website-url="https://d2nkteam.wixsite.com/restshare"><span class="app-name">RestShare</span></div>
   <div class="app" data-ios-app-id="1514225088" data-ios-testflight-url="https://testflight.apple.com/join/zqAHFnuF" data-website-url="./midiplayer/"><span class="app-name">MIDI Player</span></div> <!-- data-url-scheme="midiplayer://" !-->
-  <div class="app" data-ios-app-id="1526170892" data-ios-testflight-url="https://testflight.apple.com/join/nIBgbI2F" data-website-url="./midimodule/" data-app-is-beta="true"><span class="app-name"><div class="app-circle testflight"></div>MIDI Module</span></div> 
+  <div class="app" data-ios-app-id="1526170892" data-ios-testflight-url="https://testflight.apple.com/join/nIBgbI2F" data-website-url="./midimodule/" data-app-is-beta="true" data-override-icon-url="./midimodule/img/Logo-1024.png"><span class="app-name"><div class="app-circle testflight"></div>MIDI Module</span></div> 
 </div>
 
 <div class="translucent-overlay" id="activityIndicatorOverlay"><div class="activity-indicator"></div></div>
@@ -180,10 +180,15 @@ h2.title {
 // Pull app icons directly from the App Store, no image hosting needed.
 document.querySelectorAll(".app").forEach((element) => {
   if (element.dataset.iosAppId) {
-    // The iTunes Search API doesn't support cross-origin requests. Using JSONP instead.
-    var s = document.createElement("script");
-    s.setAttribute("src", "https://itunes.apple.com/lookup?callback=iTunesDataReceiver&id=" + element.dataset.iosAppId);
-    document.head.appendChild(s);
+    if (!element.dataset.overrideIconUrl) {
+      // The iTunes Search API doesn't support cross-origin requests. Using JSONP instead.
+      var s = document.createElement("script");
+      s.setAttribute("src", "https://itunes.apple.com/lookup?callback=iTunesDataReceiver&id=" + element.dataset.iosAppId);
+      document.head.appendChild(s);
+    } else {
+      // If an override icon URL exists, set that as the app icon.
+      element.style.backgroundImage = "url(" + element.dataset.overrideIconUrl + ")";
+    }
   }
 });
 function iTunesDataReceiver(response) { // JSONP callback for iTunes Search API
