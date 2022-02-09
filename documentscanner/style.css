@@ -21,6 +21,28 @@ a:hover {
   color: #0074d9;
   text-decoration: underline;
 }
+.violator {
+  box-sizing: border-box;
+  white-space: nowrap;
+  display: inline-block;
+  background: transparent;
+  border: 1px solid #bf4800;
+  color: #bf4800;
+  font-size: 17px;
+  line-height: 1.1764805882;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  border-radius: 18px;
+  padding: 7px 18px;
+}
+.violator-reduced {
+  font-size: 12px;
+  line-height: 1.3333733333;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  border-radius: 12px;
+  padding: 3px 11px;
+}
 .footer {
   position: fixed;
   bottom: 1rem;
@@ -32,5 +54,10 @@ a:hover {
   body {
     background-color: #1d1d1d;
     color: #eeeeee;
+  }
+  .violator {
+    background: transparent;
+    border-color: #6e6e73;
+    color: #6e6e73;
   }
 }
