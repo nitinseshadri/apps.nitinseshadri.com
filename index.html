@@ -18,10 +18,20 @@ body {
   user-select: none;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-touch-callout: none;
-  background-image: url("/img/HudsonRiver.jpg");
+  background-image: url("img/HudsonRiver.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+a:hover {
+  color: inherit;
+}
+a:visited {
+  color: inherit;
 }
 /* CSS Flexbox! */
 .homescreen {
@@ -110,6 +120,14 @@ h2.title {
 .app-circle.testflight {
   background-color: #ffcc00; /* iOS systemYellow */
 }
+.footer {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+}
+.footer > p:last-child {
+  margin-bottom: 0;
+}
 .translucent-overlay {
   display: none; /* Hidden by default; unhide with CSS or JS */
   position: absolute;
@@ -137,6 +155,21 @@ h2.title {
   border-right: 0.125em solid white; /* 2px */
   animation: small-spin 0.5s linear infinite;
 }
+/* Temporary fix for small screen sizes */
+@media (max-width: 419px) {
+  body {
+    color: black;
+    background-image: none;
+  }
+  .homescreen {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .footer {
+    display: none;
+  }
+}
+/* End of temporary fix */
 @media (min-width: 420px) {
   .homescreen {
     height: 100vh;
@@ -184,6 +217,8 @@ h2.title {
   <div class="app" data-ios-app-id="1514225088" data-ios-testflight-url="https://testflight.apple.com/join/zqAHFnuF" data-website-url="./midiplayer/"><span class="app-name">MIDI Player</span></div> <!-- data-url-scheme="midiplayer://" !-->
   <div class="app" data-ios-app-id="1526170892" data-ios-testflight-url="https://testflight.apple.com/join/nIBgbI2F" data-website-url="./midimodule/" data-app-is-beta="true" data-override-icon-url="./midimodule/img/Logo-1024.png"><span class="app-name"><div class="app-circle testflight"></div>MIDI Module</span></div> 
 </div>
+
+<div class="footer"><p>For open-source projects, <a href="https://github.com/nitinseshadri">see my GitHub &rarr;</a></p></div>
 
 <div class="translucent-overlay" id="activityIndicatorOverlay"><div class="activity-indicator"></div></div>
 
