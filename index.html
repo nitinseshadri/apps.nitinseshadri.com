@@ -37,6 +37,7 @@ a:visited {
 /* CSS Flexbox! */
 .homescreen {
   width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -170,24 +171,9 @@ h2.title {
   border-right: 0.125em solid white; /* 2px */
   animation: small-spin 0.5s linear infinite;
 }
-/* Temporary fix for small screen sizes */
-@media (max-width: 419px) {
-  body {
-    color: black;
-    background-image: none;
-  }
+@media (max-width: 799px) {
   .homescreen {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-  }
-  .footer {
-    display: none;
-  }
-}
-/* End of temporary fix */
-@media (min-width: 420px) {
-  .homescreen {
-    height: 100vh;
+    padding-bottom: 4em;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -205,11 +191,6 @@ h2.title {
   .activity-indicator {
     border: 0.125em solid white; /* 2px */
     border-right: 0.125em solid black; /* 2px */
-  }
-}
-@media (prefers-color-scheme: dark) and (min-width: 420px) {
-  body {
-    background-color: #1d1d1d;
   }
 }
 @keyframes small-spin {
