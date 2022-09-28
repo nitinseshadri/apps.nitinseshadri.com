@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>404</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+<style>
+body {
+  background-color: black;
+  color: white;
+  font-family: 'DotGothic16', Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  perspective: 100em;
+}
+a {
+  color: gray;
+}
+a:hover {
+  color: lightgray;
+}
+.revolving-404 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  animation: revolving 2.7s linear infinite;
+}
+@media (orientation: landscape) {
+  .revolving-404 {
+    font-size: 30dvh;
+  }
+}
+@media (orientation: portrait) {
+  .revolving-404 {
+    font-size: 30dvw;
+  }
+}
+@keyframes revolving {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(-360deg);
+  }
+}
+</style>
+</head>
+<body>
+<h1 class="revolving-404">404</h1>
+<p>The page was not found.</p>
+<p><a href="/">&larr; Return to the home page</a></p>
+</body>
+</html>
