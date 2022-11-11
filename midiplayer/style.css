@@ -82,9 +82,7 @@ a.border-button:active {
   a {
     color: #fefefe;
   }
-  a.border-button:hover {
-    background-color: #eeeeee;
-    color: #1d1d1d;
-    border: 1px solid #eeeeee;
+  a.border-button {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
   }
 }
