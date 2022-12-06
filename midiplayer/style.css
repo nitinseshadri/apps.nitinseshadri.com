@@ -70,6 +70,11 @@ a.border-button:active {
     width: 100%;
   }
 }
+@media (prefers-contrast: more) {
+  a.border-button {
+    background-color: #007aff;
+  }
+}
 @media screen and (prefers-color-scheme: dark) {
   body {
     background-color: #1d1d1d;
