@@ -13,11 +13,10 @@ h1, h2, h3 {
   font-weight: 600;
 }
 a {
-  color: #08f;
+  color: #0074d9;
   text-decoration: none;
 }
 a:hover {
-  color: #0074d9;
   text-decoration: underline;
 }
 .violator {
