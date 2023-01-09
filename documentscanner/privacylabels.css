@@ -1,0 +1,54 @@
+.app-privacy__cards {
+    margin-top: 13px;
+    text-shadow: none; /* added */
+}
+.app-privacy__card {
+    background-color: #f8f8f8;
+    padding: 28px 20px 20px;
+    border-radius: 16px;
+    margin-left: auto; /* added */
+    margin-right: auto; /* added */
+}
+.privacy-type__icon {
+    width: 32px;
+    height: 32px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.privacy-type__icon svg {
+    height: auto;
+    width: 100%;
+    fill: #0070c9;
+}
+.privacy-type__heading {
+    margin-top: 9px;
+    color: #111;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.33338;
+    font-weight: 600;
+    letter-spacing: -.016em;
+    font-family: -apple-system, "SF Pro Text","SF Pro Icons","Apple WebExp Icons Custom","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.privacy-type__description {
+    margin-top: 6px;
+    color: #666;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.38462;
+    font-weight: 400;
+    letter-spacing: -.005em;
+    font-family: -apple-system, "SF Pro Text","SF Pro Icons","Apple WebExp Icons Custom","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
