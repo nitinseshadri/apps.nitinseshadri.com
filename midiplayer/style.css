@@ -59,6 +59,10 @@ a.border-button:active {
   opacity: 0.2;
   transition: opacity 0s;
 }
+pre {
+  font-family: "Menlo", monospace;
+  font-size: 10pt;
+}
 .small-text {
   font-size: 0.8em;
 }
