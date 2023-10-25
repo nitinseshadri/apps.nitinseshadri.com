@@ -34,6 +34,10 @@ a:hover {
 a:visited {
   color: inherit;
 }
+.homescreen-container {
+  backdrop-filter: blur(0.25rem) brightness(0.7);
+  -webkit-backdrop-filter: blur(0.25rem) brightness(0.7);
+}
 /* CSS Flexbox! */
 .homescreen {
   width: 100%;
@@ -45,8 +49,6 @@ a:visited {
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
-  backdrop-filter: blur(0.25rem) brightness(0.7);
-  -webkit-backdrop-filter: blur(0.25rem) brightness(0.7);
 }
 .title, .center {
   width: 100%;
@@ -207,7 +209,7 @@ h2.title {
     background-color: black;
     color: white;
   }
-  .homescreen {
+  .homescreen-container {
     backdrop-filter: blur(0.25rem) brightness(0.4);
     -webkit-backdrop-filter: blur(0.25rem) brightness(0.4);
   }
@@ -234,15 +236,17 @@ h2.title {
 </head>
 <body>
 
-<div class="homescreen">
-  <h1 class="title">Choose an app.</h1>
-  <noscript class="center"><h2 class="title error">Sorry, you need to enable JavaScript to use this page.</h2></noscript>
-  <div class="app" role="button" tabindex="0" data-ios-app-id="1514225088" data-ios-testflight-url="https://testflight.apple.com/join/zqAHFnuF" data-website-url="./midiplayer/"><span class="app-name">MIDI Player</span></div> <!-- data-url-scheme="midiplayer://" !-->
-  <div class="app" role="button" tabindex="0" data-ios-app-id="1526170892" data-ios-testflight-url="https://testflight.apple.com/join/nIBgbI2F" data-website-url="./midimodule/" data-app-is-beta="true" data-override-icon-url="./midimodule/img/Logo-1024.png"><span class="app-name"><div class="app-circle testflight"></div>MIDI Module</span></div>
-  <div class="app" role="button" tabindex="0" data-ios-app-id="1605057631" data-ios-testflight-url="https://testflight.apple.com/join/F2JKyfbg" data-website-url="./documentscanner/"><span class="app-name">Scanner</span></div>
-  <div class="app" role="button" tabindex="0" data-ios-app-id="1658583168" data-ios-testflight-url="https://testflight.apple.com/join/EjM0RlCH" data-website-url="./systemspecs/"><span class="app-name">System Specs</span></div>
-  <div class="app" role="button" tabindex="0" data-ios-app-id="1241696994" data-android-app-id="appinventor.ai_seshadri_nitin.Mathematica" data-website-url="https://projectmathematica.appspot.com/"><span class="app-name">Math++</span></div>
-  <!--<div class="app" role="button" tabindex="0" data-ios-app-id="1311168490" data-website-url="https://d2nkteam.wixsite.com/restshare"><span class="app-name">RestShare</span></div>!-->
+<div class="homescreen-container">
+  <div class="homescreen">
+    <h1 class="title">Choose an app.</h1>
+    <noscript class="center"><h2 class="title error">Sorry, you need to enable JavaScript to use this page.</h2></noscript>
+    <div class="app" role="button" tabindex="0" data-ios-app-id="1514225088" data-ios-testflight-url="https://testflight.apple.com/join/zqAHFnuF" data-website-url="./midiplayer/"><span class="app-name">MIDI Player</span></div> <!-- data-url-scheme="midiplayer://" !-->
+    <div class="app" role="button" tabindex="0" data-ios-app-id="1526170892" data-ios-testflight-url="https://testflight.apple.com/join/nIBgbI2F" data-website-url="./midimodule/" data-app-is-beta="true" data-override-icon-url="./midimodule/img/Logo-1024.png"><span class="app-name"><div class="app-circle testflight"></div>MIDI Module</span></div>
+    <div class="app" role="button" tabindex="0" data-ios-app-id="1605057631" data-ios-testflight-url="https://testflight.apple.com/join/F2JKyfbg" data-website-url="./documentscanner/"><span class="app-name">Scanner</span></div>
+    <div class="app" role="button" tabindex="0" data-ios-app-id="1658583168" data-ios-testflight-url="https://testflight.apple.com/join/EjM0RlCH" data-website-url="./systemspecs/"><span class="app-name">System Specs</span></div>
+    <div class="app" role="button" tabindex="0" data-ios-app-id="1241696994" data-android-app-id="appinventor.ai_seshadri_nitin.Mathematica" data-website-url="https://projectmathematica.appspot.com/"><span class="app-name">Math++</span></div>
+    <!--<div class="app" role="button" tabindex="0" data-ios-app-id="1311168490" data-website-url="https://d2nkteam.wixsite.com/restshare"><span class="app-name">RestShare</span></div>!-->
+  </div>
 </div>
 
 <div class="footer"><p>For open-source projects, <a href="https://github.com/nitinseshadri">see my GitHub &rarr;</a></p></div>
