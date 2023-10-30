@@ -23,6 +23,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  animation: delayed-overflow 1s linear forwards;
 }
 a {
   color: inherit;
@@ -238,6 +239,14 @@ h2.title {
     to {
         opacity: 1;
         transform: scale(1) translate3d(0, 0, 0);
+    }
+}
+@keyframes delayed-overflow {
+    from {
+        overflow: hidden;
+    }
+    to {
+        overflow: unset;
     }
 }
 @keyframes small-spin {
