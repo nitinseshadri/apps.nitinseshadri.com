@@ -14,10 +14,17 @@
   max-height: 60vh;
   aspect-ratio: 16 / 10;
   background-image: url("img/01 Light Vibrant Ventura.png");
-  background-size: cover;
+  background-size: 120%;
+  background-position: center;
   background-repeat: no-repeat;
   border: 0.5px solid gray;
   border-radius: 4px;
+  transition: background-size 0.2s;
+}
+@media screen and (max-height: 540px) {
+  #hero-screenshot {
+    background-size: 100%;
+  }
 }
 @media screen and (prefers-color-scheme: dark) {
   #hero-screenshot {
