@@ -74,6 +74,12 @@ pre {
   border: 2px solid rgba(0, 0, 0, 0.15);
   border-radius: 2rem;
 }
+.group-box.group-box-small {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 .footer {
   display: inline-block;
   padding-top: 0.75rem;
