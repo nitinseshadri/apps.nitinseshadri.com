@@ -48,6 +48,7 @@ a.border-button {
   background-color: #3D9BE9;
   color: white;
   border-radius: 8px;
+  font-weight: 500;
   text-decoration: none;
   box-shadow: 0 4px 10px gray;
   transition: opacity 0.5s;
