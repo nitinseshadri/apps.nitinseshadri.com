@@ -60,6 +60,16 @@ a.border-button:active {
   opacity: 0.2;
   transition: opacity 0s;
 }
+a.mastodon-link {
+  transition: color 0.25s, opacity 0.5s;
+}
+a.mastodon-link:hover, a.mastodon-link:active {
+  color: #5e64f8;
+}
+a.mastodon-link:active {
+  opacity: 0.2;
+  transition: opacity 0s;
+}
 pre {
   font-family: "Menlo", monospace;
   font-size: 10pt;
