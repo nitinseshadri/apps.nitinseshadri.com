@@ -48,7 +48,9 @@ a.border-button {
   margin-top: 0.5em;
   padding: 0.5em 0.75em;
   background-color: #3D9BE9;
+  background: linear-gradient(#3D9BE9, #007AFF);
   color: white;
+  border: 0.5px solid rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   font-weight: 500;
   text-decoration: none;
@@ -61,6 +63,11 @@ a.border-button {
 a.border-button:active {
   opacity: 0.2;
   transition: opacity 0s;
+}
+a.border-button.border-button-small {
+  padding: 0 0.75em;  
+  border-radius: 1em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 a.mastodon-link {
   transition: color 0.25s, opacity 0.5s;
