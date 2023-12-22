@@ -9,10 +9,53 @@
 <style>
 body {
   margin: 0;
+  background: rgba(0, 0, 0, 0);
   background-color: rgba(0, 0, 0, 0);
 }
 p {
   margin: 0;
+}
+ul.navigation {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: stretch; /* Default */
+  justify-content: space-between;
+  list-style-type: none;
+  overflow-x: scroll;
+}
+ul.navigation > li {
+  margin: 0.075em;
+  flex: 0 1 auto; /* Default */
+}
+ul.navigation > li.separator {
+  width: 0px;
+  border: 0.5px solid rgba(0, 0, 0, 0.15);
+  flex: 0 0 auto; /* Default */
+}
+ul.navigation > li.separator.hidden {
+  visibility: hidden;
+}
+ul.navigation > li > a {
+  text-decoration: none;
+  padding: 0 0.70em;
+  border: 0.5px solid rgba(0, 0, 0, 0);
+  border-radius: 1em;
+}
+ul.navigation > li > a:hover {
+  border: 0.5px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+}
+ul.navigation > li > a:active {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+ul.navigation > li > a.current {
+  background: linear-gradient(#8D8883, #746E6A);
+  border: 0.5px solid rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+}
+ul.navigation > li > a.current {
+  color: #F2F2F2;
 }
 .logo-text {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -24,10 +67,82 @@ p {
   .logo-text {
     display: none;
   }
+  ul.navigation {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 0.5px solid rgba(0, 0, 0, 0.15);
+    border-radius: 1em;
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.25);
+  }
+  ul.navigation > li.separator {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+  }
+}
+@media screen and (max-width: 288px) {
+  ul.navigation > li.separator {
+    display: none;
+  }
+}
+@media screen and (max-width: 336px) {
+  ul.navigation {
+    border-radius: 0.5em;
+  }
+  ul.navigation > li > a {
+    padding: 0 0.20em;
+    border-radius: 0.4em;
+  }
+}
+@media screen and (prefers-color-scheme: dark) {
+  ul.navigation > li.separator {
+    border-left:  0.5px solid rgba(255, 255, 255, 0.25);
+  }
+  ul.navigation > li > a:hover {
+    border: 0.5px solid rgba(255, 255, 255, 0.15);
+  }
+  ul.navigation > li > a:active {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+}
+@media screen and (prefers-color-scheme: dark) and (max-width: 640px) {
+  ul.navigation {
+    border: 0.5px solid rgba(255, 255, 255, 0.15);
+  }
 }
 </style>
+<noscript>
+  <style>
+    ul.navigation > li > a {
+      text-decoration: underline;
+  }
+  </style>
+</noscript>
 </head>
 <body>
-<p><span class="logo-text">NS MIDI Player</span> <a href="index.html" target="_parent">Home</a> - <a href="privacy.html" target="_parent">Privacy</a> - <a href="directory.html" target="_parent">Directory</a> - <a href="support.html" target="_parent">Contact</a></p>
+<nav>
+<p>
+  <ul class="navigation">
+    <li class="logo-text">NS MIDI Player</li>
+    <li class="separator hidden"></li>
+    <li><a href="index.html" target="_parent">Home</a></li>
+    <li class="separator"></li>
+    <li><a href="privacy.html" target="_parent">Privacy</a></li>
+    <li class="separator"></li>
+    <li><a href="directory.html" target="_parent">Directory</a></li>
+    <li class="separator"></li>
+    <li><a href="support.html" target="_parent">Contact</a></li>
+    <li class="separator hidden"></li>
+  </ul>
+</p>
+</nav>
+<script>
+var url = (window.location != window.parent.location) ? document.referrer : document.location.href;
+document.querySelectorAll("ul.navigation > li > a").forEach((element) => {
+  if (element.href == url) {
+    element.classList.add("current")
+  } else if (url.endsWith("/") && element.href.endsWith("index.html")) {
+    element.classList.add("current")
+  }
+});
+</script>
 </body>
 </html>

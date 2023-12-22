@@ -9,20 +9,22 @@ body {
 }
 .navbar {
   position: sticky;
-  top: 0;
+  top: 1rem;
   left: 0;
   margin-top: -1rem;
-  padding-top: 1rem;
-  margin-left: -2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  margin-left: -1.25rem;
+  padding-left: 1.25rem;
+  margin-right: -1.25rem;
+  padding-right: 1.25rem;
+  padding-bottom: 0.5rem;
   width: 100%;
-  height: 1.5rem;
+  height: 1.75rem;
   background-color: rgba(255, 255, 255, 0.85);
-  border: none;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.25);
+  border: 0.5px solid rgba(0, 0, 0, 0.25);
+  border-radius: 2rem;
   overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(1.25rem) saturate(1.8);
   -webkit-backdrop-filter: blur(1.25rem) saturate(1.8);
 }
@@ -82,8 +84,9 @@ pre {
   margin-bottom: 2rem;
   padding: 2rem;
   background-color: rgba(255, 255, 255, 0.75);
-  border: 2px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 2rem;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 .group-box.group-box-small {
   margin-top: 1rem;
@@ -102,6 +105,15 @@ body.longform-content > *:not(.navbar):not(.footer) {
   margin-left: auto;
   margin-right: auto;
 }
+@media screen and (max-width: 380px) {
+  .navbar {
+    top: 0.25rem;
+    margin-left: -1.75rem;
+    padding-left: 1.75rem;
+    margin-right: -1.75rem;
+    padding-right: 1.75rem;
+  }
+}
 @media screen and (max-width: 720px) {
   .footer {
     padding-right: 0;
@@ -116,11 +128,16 @@ body.longform-content > *:not(.navbar):not(.footer) {
 @media screen and (prefers-color-scheme: dark) {
   body {
     background-color: #1d1d1d;
+    background: linear-gradient(#202020, #101010);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: #eeeeee;
   }
   .navbar {
     background-color: rgba(0, 0, 0, 0.15);
-    border-bottom: 0.5px solid rgba(255, 255, 255, 0.15);
+    border: 0.5px solid rgba(255, 255, 255, 0.15);
   }
   a {
     color: #fefefe;
@@ -130,6 +147,6 @@ body.longform-content > *:not(.navbar):not(.footer) {
   }
   .group-box {
     background-color: rgba(0, 0, 0, 0.15);
-    border: 2px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
 }
