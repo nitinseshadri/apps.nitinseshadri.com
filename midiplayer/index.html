@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="style.css">
 <style>
 #hero-screenshot {
+  margin: 0 auto;
   width: 100%;
   max-width: 640px;
   max-height: 60vh;
@@ -22,6 +23,23 @@
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.25);
   transition: background-size 0.2s;
 }
+#hero-section {
+  margin-top: 4em;
+  margin-bottom: 3em;
+  min-height: calc(100dvh - 3em);
+  text-align: center;
+  border-bottom: 0.5px solid gray;
+}
+#hero-section {
+  animation: animate-in 0.85s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+section {
+  margin-bottom: 3em;
+}
+section > p {
+  font-size: 1.125em;
+  line-height: 2em;
+}
 @media screen and (max-height: 600px) {
   #hero-screenshot {
     background-size: 100%;
@@ -33,41 +51,75 @@
     border-color: #333333;
   }
 }
+@media (prefers-reduced-motion: reduce) {
+  #hero-section {
+    animation: none;
+  }
+}
+@keyframes animate-in {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
 </style>
 </head>
-<body>
+<body class="longform-content">
 <iframe class="navbar" src="navbar.html"></iframe>
-<h1>NS MIDI Player</h1>
 
-<p>NS MIDI Player is a simple MIDI player for iOS, iPadOS, and macOS.</p>
+<div id="hero-section">
+<div id="hero-screenshot"></div>
+<h1>A simple MIDI player for iPhone, iPad, and Mac.</h1>
+<p><a href="https://apps.apple.com/us/app/id1514225088" class="border-button">Get the app</a><span style="margin-left: 1.5em;">or scroll for more &darr;</span></p>
+</div>
 
-<p><div id="hero-screenshot"></div></p>
+<section>
+  <h1>Hear your music.</h1>
+  <p>NS MIDI Player is <b>free</b>, and <b>doesn't have ads, subscriptions, or data collection.</b>
+    You can <b>play standard MIDI files</b> &mdash; both type 0 and type 1 &mdash; that have file extensions .mid, .midi, and .kar.
+    The <b>General MIDI and GS standards are supported</b> with the included default SoundFont. Or you can <b>use your own SoundFonts</b> &mdash; the SF2 and DLS formats are supported.
+    <b>Customizable reverb</b> makes your MIDI files sound better than ever.
+    And you can <b>export your MIDI files as audio.<sup><a href="#full-version-upgrade">*&darr;</a></sup></b>
+    So you can hear them the way they were meant to be heard.
+    </p>
+</section>
 
-<p><a href="https://apps.apple.com/us/app/id1514225088" class="border-button">Get the app</a></p>
+<section>
+  <h1>Connect to your devices.</h1>
+  <p>NS MIDI Player supports <b>background audio playback and AirPlay.</b>
+    You can <b>control it from anywhere</b>, including the Lock Screen, Control Center, and Apple Watch.
+    And you can <b>connect to your MIDI devices</b> with <b>Core MIDI and Bluetooth MIDI.<sup><a href="#full-version-upgrade">*&darr;</a></sup></b>
+  </p>
+</section>
 
-<h2>Features</h2>
-<p>
-- Free!<br>
-- No ads, subscriptions, or data collection<br>
-<br>
-- Play standard MIDI files (SMF) with file extension .mid<br>
-- GM and GS standards supported with the default SoundFont<br>
-- Use custom SoundFonts with file extension .sf2 or .dls<br>
-- Connect to MIDI outputs with Core MIDI<br>	
-- Convert MIDI files to audio<br>
-<br>
-- "Open with" from other apps, such as Safari<br>
-- Integrated with the Files app (iOS and iPadOS)<br>
-- Supports drag-and-drop<br>
-- Supports Quick Look previews<br>
-- Share MIDI files directly from the app<br>
-<br>
-- Supports background audio and AirPlay<br>
-- Lock screen and Control Center controls with scrubbing<br>
-- Gapless repeat mode<br>
-- Playback speed control<br>
-- Configurable reverb
-</p>
+<section>
+  <h1>Works with your workflow.</h1>
+  <p>With NS MIDI Player, you can <b>open MIDI files from almost any app</b>, including Safari, the Files app, and the Finder.
+    <b>Drag-and-drop</b> is supported, too.
+    NS MIDI Player <b>works with the Files app</b> on iPhone and iPad, so you don't have to tinker with Apple Music or iTunes to get your MIDI files on your device.
+    Practicing with an instrument? <b>Playback speed control</b> with <b>tap tempo</b> makes it easy to speed up or slow down a MIDI file to your liking.
+    You can <b>share MIDI files straight from the app</b> to any other app that opens them.
+    And you can <b>preview MIDI files</b> with Quick Look.</p>
+</section>
+
+<section id="full-version-upgrade">
+  <h1>Upgrade to the full version.</h1>
+  <p>Upgrading to the full version gets you the ability to <b>export MIDI files as audio</b> and <b>connect to MIDI devices</b> &mdash; all in a <b>one-time in-app purchase</b> shared across all of your devices.
+    Coming soon: a playlist feature, time-synced lyrics, <a href="support.html#playlist-beta">and more.</a>
+  </p>
+</section>
+
+<section>
+  <h1>Ready to get started?</h1>
+  <p><a href="https://apps.apple.com/us/app/id1514225088" class="border-button">Get the app</a></p>
+</section>
+
+<p>Requires iOS 15.2, iPadOS 15.2, macOS 12.1, or newer<br>
+Running an older version of macOS? <a href="https://github.com/nitinseshadri/NSMIDIPlayer-Legacy/releases">Download old versions of NS MIDI Player for Mac here</a></p>
 
 <p class="footer"><i>Copyright © 2020-∞ Nitin Seshadri. All rights reserved.</i></p>
 </body>
