@@ -52,6 +52,7 @@ ul.navigation > li > a:active {
 ul.navigation > li > a.current {
   background: linear-gradient(#8D8883, #746E6A);
   border: 0.5px solid rgba(0, 0, 0, 0.25);
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
 }
 ul.navigation > li > a.current {
@@ -119,7 +120,6 @@ ul.navigation > li > a.current {
 </head>
 <body>
 <nav>
-<p>
   <ul class="navigation">
     <li class="logo-text">NS MIDI Player</li>
     <li class="separator hidden"></li>
@@ -132,7 +132,6 @@ ul.navigation > li > a.current {
     <li><a href="support.html" target="_parent">Contact</a></li>
     <li class="separator hidden"></li>
   </ul>
-</p>
 </nav>
 <script>
 var url = (window.location != window.parent.location) ? document.referrer : document.location.href;
