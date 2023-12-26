@@ -52,12 +52,18 @@ a:visited {
   align-content: center;
   animation: animate-in 0.85s cubic-bezier(0.19, 1, 0.22, 1) forwards;
 }
+.vision .homescreen {
+  animation: animate-in-vision 0.75s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
 .title, .center {
   width: 100%;
 }
 .title {
   font-weight: 600;
   font-stretch: expanded;
+}
+.vision .title {
+  opacity: 0.9;
 }
 h1.title {
   font-size: 3em; /* 48px */
@@ -82,10 +88,16 @@ h2.title {
   cursor: pointer;
   /*background-color: rgb(235,235,235);*/
   background-color: black; /* Default app BG color */
+  background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   transition: box-shadow 0.5s, transform 0.2s, filter 0.2s;
   /*cursor: none;*/
+}
+.vision .app {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  background-size: 102%;
 }
 .app > .app-name {
   display: inline-block;
@@ -97,7 +109,11 @@ h2.title {
   white-space: nowrap;
   text-overflow: ellipsis;
   border-radius: 0.25em;
-  transition: color 0.25s, transform 0.2s;
+  transition: color 0.25s, transform 0.2s, opacity 0.2s;
+}
+.vision .app > .app-name {
+  font-weight: 500;
+  opacity: 0.8;
 }
 .app:hover {
   box-shadow: 0 5px 28px 0 rgba(0,0,0,.3);
@@ -109,8 +125,14 @@ h2.title {
   color: white;
   transform: scale(calc(1/1.1)) translateY(-0.55rem);
 }
+.vision .app:hover > .app-name {
+  opacity: 1.0;
+}
 .app:focus-visible > .app-name {
   background-color: #1067de; /* macOS Finder selection color */
+}
+.vision .app:focus-visible > .app-name {
+  opacity: 1.0;
 }
 .app:active {
   box-shadow: 0 5px 28px 0 rgba(0,0,0,.05);
@@ -120,6 +142,9 @@ h2.title {
 }
 .app:active > .app-name {
   transform: scale(1.0) translateY(0);
+}
+.vision .app:active > .app-name {
+  opacity: 1.0;
 }
 .app-badge {
   position: relative;
@@ -150,12 +175,19 @@ h2.title {
 .footer {
   position: fixed;
   bottom: 1em;
-  right: 1em;
-  padding: 0.5em 0.75em;
-  border-radius: 0.75em;
+  right: 1.25em;
+  padding: 0.5em 1em;
+  border-radius: 1.5em;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(0.25rem) saturate(1.8);
   -webkit-backdrop-filter: blur(0.25rem) saturate(1.8);
+}
+.vision .footer {
+  background: rgba(127, 127, 127, 0.75);
+  border: 1px solid rgba(127, 127, 127, 0.5);
+  backdrop-filter: blur(1rem) saturate(1.8);
+  -webkit-backdrop-filter: blur(1rem) saturate(1.8);
+  box-shadow: 0 1px 0.5em rgba(0, 0, 0, 0.15);
 }
 .footer > p:first-child {
   margin-top: 0;
@@ -164,6 +196,7 @@ h2.title {
   margin-bottom: 0;
 }
 .footer a {
+  font-weight: 500;
   transition: opacity 0.25s;
 }
 .footer a:hover {
@@ -238,6 +271,18 @@ h2.title {
     }
     to {
         opacity: 1;
+        transform: scale(1) translate3d(0, 0, 0);
+    }
+}
+@keyframes animate-in-vision {
+    from {
+        opacity: 0;
+        filter: blur(1.25rem);
+        transform: scale(1.05) translate3d(0, -20px, 0);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
         transform: scale(1) translate3d(0, 0, 0);
     }
 }
@@ -330,6 +375,10 @@ document.onkeydown = function(e) {
     document.activeElement.click();
   }
 };
+// FIXME: Find a way to detect XR headsets.
+if (window.location.hash == "#vision") {
+  document.body.classList.add("vision");
+}
 </script>
 
 </body>
